@@ -16,6 +16,11 @@ before_install:
 before_script:
   - cpplint src/*
 
+script: 
+  -|
+    R CMD build .
+    travis_wait 20 R CMD check parallelDist*tar.gz
+
 after_success:
   - Rscript -e 'covr::codecov()'
 
