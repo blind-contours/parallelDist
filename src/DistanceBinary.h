@@ -99,7 +99,7 @@ public:
   double calcDistance(const arma::mat &A, const arma::mat &B) {
     BinaryCount bc = BinaryCount::getBinaryCount(A, B);
     return util::similarityToDistance(
-      (static_cast<double>(bc.getA()) + bc.getD() - bc.getB() - bc.getC()) / A.n_cols);
+      (static_cast<double>(bc.getA()) + bc.getD() - bc.getB() + bc.getC()) / A.n_cols);
   }
 };
 
